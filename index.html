@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="sv">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renässansen | Sammanfattning och quiz</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f6f1e8;color:#251d19;font:1rem/1.6 system-ui,sans-serif}header{background:#302019;color:#fff6e8;border-bottom:5px solid #bc8845}main,.intro{max-width:960px;margin:auto;padding:clamp(22px,5vw,56px)}.intro{padding-block:clamp(42px,8vw,90px)}h1,h2,h3{font-family:Georgia,serif;line-height:1.12}h1{font-size:clamp(3rem,9vw,6.8rem);margin:0}h2{font-size:clamp(1.9rem,5vw,2.75rem);margin:0 0 1rem}.subject{color:#f2c890}p{margin:.55rem 0 1rem}.actions{display:flex;flex-wrap:wrap;gap:.65rem;margin-top:1.5rem}.action,button{font:inherit;font-weight:650;border:1px solid transparent;border-radius:8px;padding:.7rem 1rem;cursor:pointer}.action{display:inline-block;text-decoration:none;background:#efc38c;color:#302019}.secondary{background:transparent;color:#fff6e8;border-color:#d1ae87}.authors{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:1.2rem 0}.authors article,.quiz{background:#fffdf8;border:1px solid #ded2c2;border-radius:15px;padding:clamp(16px,3vw,28px)}.authors h3{margin:0 0 .5rem}.authors p{margin:0}.quiz{margin:2.2rem 0 1rem;box-shadow:0 8px 26px #35231312}.status{display:flex;justify-content:space-between;gap:8px;color:#604337}progress{width:100%;accent-color:#815034;height:.8rem}.options{display:grid;gap:.5rem}.option{text-align:left;background:white;color:inherit;border-color:#d5c8b8}.option:hover:not(:disabled){background:#f6ece0;border-color:#815034}.option:disabled{cursor:default;opacity:1}.option.correct{background:#e1f4e8;border-color:#347353}.option.wrong{background:#fbe7e2;border-color:#ad5343}.next{background:#693921;color:white}.feedback{min-height:1.6rem;margin:1rem 0}.feedback:empty{display:none}.next{margin-top:.5rem}a:focus-visible,button:focus-visible{outline:3px solid #a36b29;outline-offset:3px}footer{font-size:.9rem;color:#604337}footer a{color:inherit}
+</style>
+<header><div class="intro">
+<p class="subject">Svenska · Litteraturhistoria</p>
+<h1>Renässansen</h1>
+<p>Se UR:s avsnitt, repetera och testa vad du minns.</p>
+<div class="actions"><a class="action" href="https://urplay.se/program/218309-svenska-forklarad-litteraturepoken-renassansen" target="_blank" rel="noopener">Se avsnittet på UR Play · 20 min</a><a class="action secondary" href="#quiz">Till quizet</a></div>
+</div></header>
+<main>
+<section aria-labelledby="summary-title">
+<h2 id="summary-title">Det viktigaste från renässansen</h2>
+<p><strong>Renässans betyder pånyttfödelse.</strong> Intresset för antikens grekiska och romerska kultur väcktes på nytt. Humanismen betonade människans förmåga att lära och tänka själv.</p>
+<p><strong>Boktryckarkonsten</strong> gjorde det möjligt att trycka samma bok i många exemplar. Fler kunde läsa och ta del av nya idéer. Genom <strong>kolonialismen</strong> spreds europeiska språk och kultur också med tvång.</p>
+<div class="authors">
+<article><h3>William Shakespeare</h3><p>I <em>Hamlet</em> grubblar en prins över hur han ska agera efter sin fars död.</p></article>
+<article><h3>Miguel de Cervantes</h3><p><em>Don Quijote</em> driver med riddarberättelser. Huvudpersonen tar bland annat väderkvarnar för jättar.</p></article>
+<article><h3>Georg Stiernhielm</h3><p>I dikten <em>Hercules</em> ställs huvudpersonen inför ett val mellan nöjen och ett liv präglat av plikt och dygd.</p></article>
+</div></section>
+<section class="quiz" id="quiz" aria-labelledby="quiz-title">
+<h2 id="quiz-title">Quiz om renässansen</h2>
+<div class="status"><span id="count"></span><span id="score"></span></div>
+<progress id="progress" aria-label="Antal besvarade frågor" max="10" value="0"></progress>
+<h3 id="question" tabindex="-1"></h3>
+<div class="options" id="options"></div>
+<p id="feedback" class="feedback" role="status"></p>
+<button class="next" id="next" hidden>Nästa fråga</button>
+<noscript>Aktivera JavaScript för att göra quizet.</noscript>
+</section>
+<footer>Quizet bygger på <a href="https://urplay.se/program/218309-svenska-forklarad-litteraturepoken-renassansen">UR:s programbeskrivning</a> och litteraturexemplen i sammanfattningen.</footer>
+</main>
+<script>
+const questions = [
+["Vad betyder ordet renässans?",["Frigörelse","Pånyttfödelse","Omvälvning","Upplysning"],1,"Namnet syftar på att intresset för antikens kultur väcktes på nytt."],
+["Vilka kulturer fick förnyad uppmärksamhet under renässansen?",["Vikingatidens nordiska kulturer","Det medeltida Frankrikes och Englands kulturer","Det forntida Egyptens och Mesopotamiens kulturer","Antikens grekiska och romerska kulturer"],3,"Författare och konstnärer hämtade inspiration från antikens Grekland och Rom."],
+["Vilken tanke hör ihop med renässansens humanism?",["Människan kan utvecklas genom att lära och tänka själv.","Människans plats i samhället bör bestämmas vid födseln.","Konsten bör främst skildra naturen.","Utbildning bör främst handla om att lära sig ett yrke."],0,"Humanismen betonade människans förmåga att lära och tänka själv."],
+["Vad förändrade boktryckarkonsten?",["Böcker började spridas främst genom högläsning.","Bokproduktionen flyttade från städerna till klostren.","Samma bok kunde framställas i många exemplar och nå fler läsare.","Varje läsare kunde beställa en egen version av en bok."],2,"När en bok kunde tryckas i många exemplar blev det lättare att sprida den."],
+["Hur bidrog kolonialismen till att sprida europeisk kultur?",["Europeiska författare reste runt och läste upp sina verk.","Europeiska makter kunde tvinga på koloniserade folk sina språk och vanor.","Europeiska böcker ersatte gradvis andra böcker genom frivilliga litteraturutbyten.","Europeiska och koloniserade samhällen bestämde gemensamt vilka språk som skulle användas."],1,"Europeiska kolonialmakter använde även tvång för att sprida sina språk och sin kultur."],
+["Vilken författare skrev pjäsen Hamlet?",["William Shakespeare","Miguel de Cervantes","Georg Stiernhielm","Niccolò Machiavelli"],0,"Hamlet är en pjäs av William Shakespeare."],
+["Vad driver Cervantes med i Don Quijote?",["Berättelser där köpmän alltid blir rika","Pjäser där allt ordnar sig genom ett lyckligt äktenskap","Berättelser där lärda personer alltid har rätt","Riddarberättelser där hjälten ständigt möter storslagna äventyr"],3,"Don Quijote försöker leva som hjältarna i sina riddarberättelser."],
+["Varför är väderkvarnarna i Don Quijote ett bra exempel på romanens humor?",["Don Quijote försöker använda dem för att bevisa en vetenskaplig teori.","Don Quijote och hans följeslagare tävlar om vem som kan bygga störst kvarn.","Don Quijote tror att de är jättar eftersom han tolkar världen som ett riddaräventyr.","Don Quijote gömmer sig i en kvarn och blir av misstag utsedd till riddare."],2,"Humorn uppstår när Don Quijotes fantasi krockar med verkligheten."],
+["Vilket val ställs huvudpersonen inför i Stiernhielms Hercules?",["Att leva för nöjen eller att leva efter plikt och dygd","Att följa sin familjs vilja eller att gifta sig av kärlek","Att hämnas sin far eller att förlåta hans mördare","Att bli riddare eller att stanna kvar på sin gård"],0,"Dikten tar upp valet mellan nöjen och ett liv präglat av plikt och dygd."],
+["Vilken sammanfattning fångar bäst flera av avsnittets huvudpunkter?",["Antikens kultur tappade betydelse samtidigt som fler fick tillgång till böcker.","Epoken präglades av förnyat intresse för antiken, ökad spridning av böcker och europeisk kultur som också spreds med tvång.","De flesta författare skrev riddarberättelser, och böcker förblev sällsynta eftersom de kopierades för hand.","Litteraturen förändrades främst genom att europeiska författare började skriva på samma språk."],1,"Antiken, boktryckarkonsten och kolonialismen är tre viktiga delar av genomgången."]
+];
+const el = Object.fromEntries(["count","score","progress","question","options","feedback","next"].map(id => [id,document.getElementById(id)]));
+let round = questions, index = 0, correct = 0, missed = [], phase = "question";
+function render() {
+  const [question, choices, answer, reason] = round[index];
+  phase = "question";
+  el.count.textContent = "Fråga " + (index + 1) + " av " + round.length;
+  el.score.textContent = correct + " rätt";
+  el.progress.max = round.length;
+  el.progress.value = index;
+  el.question.textContent = question;
+  el.feedback.textContent = "";
+  el.next.hidden = true;
+  el.options.replaceChildren();
+  choices.forEach((choice, i) => {
+    const button = document.createElement("button");
+    button.className = "option";
+    button.textContent = "ABCD"[i] + ". " + choice;
+    button.addEventListener("click", () => {
+      if (phase !== "question") return;
+      phase = "answered";
+      if (i === answer) correct++;
+      else missed.push(round[index]);
+      el.options.querySelectorAll("button").forEach((option, position) => {
+        option.disabled = true;
+        if (position === answer) option.classList.add("correct");
+        else if (position === i) option.classList.add("wrong");
+      });
+      el.score.textContent = correct + " rätt";
+      el.progress.value = index + 1;
+      el.feedback.textContent = (i === answer ? "Rätt! " : "Fel. Rätt svar är " + "ABCD"[answer] + ". ") + reason;
+      el.next.textContent = index + 1 === round.length ? "Visa resultat" : "Nästa fråga";
+      el.next.hidden = false;
+      el.next.focus({preventScroll:true});
+    });
+    el.options.append(button);
+  });
+}
+function start(questionsToUse) {
+  round = questionsToUse;
+  index = 0;
+  correct = 0;
+  missed = [];
+  render();
+  el.question.focus();
+}
+el.next.addEventListener("click", () => {
+  if (++index < round.length) {
+    render();
+  } else {
+    phase = "result";
+    el.count.textContent = "Omgång klar";
+    el.question.textContent = correct + " av " + round.length + " rätt";
+    el.feedback.textContent = missed.length ? "Du kan öva igen på frågorna du missade." : "Alla rätt!";
+    el.options.replaceChildren();
+    el.next.hidden = true;
+    const actions = [["Börja om", questions]];
+    if (missed.length) actions.unshift(["Gör om felaktiga frågor", missed]);
+    for (const [label, selection] of actions) {
+      const button = document.createElement("button");
+      button.className = "option";
+      button.textContent = label;
+      button.addEventListener("click", () => start(selection));
+      el.options.append(button);
+    }
+  }
+  el.question.focus();
+});
+render();
+</script>
+</html>
